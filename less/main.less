@@ -1,0 +1,140 @@
+@color: #fff;
+.hov-transform(@x: 1.1, @y: 1.1) {
+	transform: scale(@x, 1.1);
+	-webkit-transform: scale(@x, @y);
+	-moz-transform: scale(@x, @y);
+	-o-transform: scale(@x, @y);
+	-ms-transform: scale(@x, @y);
+}
+@transition: 0.5s;
+.link-hover{
+	color: darken(@color, 20%);
+	transition: @transition;
+}
+@m: 1rem;
+@bg-color: #000;
+// Style start
+body{
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
+	margin: 0;
+	padding: 0;
+}
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+}
+button:focus,
+input:focus,
+a:focus,
+textarea:focus {
+	outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+// Text-color
+nav ul li a.nav-color,
+div.card-body a.card-link,
+footer div a,
+p a.company-link{
+	color: @color;
+	transition: @transition*1.2;
+}
+header h1{
+	color: fade(@color, 70%);
+}
+div.block-2, footer div a:hover,
+div.card-body a.card-link:hover,
+footer div a:hover {
+	color: darken(@color, 30%);
+	text-decoration: none;
+}
+// Header
+nav ul li a.nav-color:hover{
+	.link-hover;
+	.hov-transform(1.4, 1.4)
+}
+// Parallax
+.parallax-window {
+	min-height: 400px;
+	background: transparent;
+}
+// Section
+.block-1, footer{
+	background-color: @bg-color;
+}
+
+div.cosmic-card ul.list-group.list-group-flush li.list-group-item{
+	border-radius: 5px;
+}
+div.container div.row div.info-card{
+	background-color: fade(@bg-color, 50%);
+	margin: @m*2;
+}
+div.container div.row div.cosmic-card, {
+	background-color: lighten(@bg-color, 40%);
+	background-color: fade(@bg-color, 50%);
+}
+
+ul.list-group li {
+	background-color: lighten(@bg-color, 50%);
+}
+
+// Preloader
+#hellopreloader>p {
+	display:none;
+}
+#hellopreloader_preload {
+	display: block;
+	position: fixed;
+	z-index: 99999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-width: 1000px;
+	background: #000000 url(../img/rings.svg) center center no-repeat;
+	background-size:86px;
+}
+/* arrow*/
+	.text-block {
+		width: 250px;
+		margin: 50px;
+	}
+
+	#go-top {
+		background-color: lighten(@bg-color, 10%);
+		position: fixed;
+		bottom: 2rem;
+		left: 3.5rem;
+		text-align: center;
+		cursor:pointer;
+		display:none;
+		border: 1px solid @color;
+		border-radius: 5px;
+		color: @color;
+		text-align: center;
+		transition: @transition*2;
+	}
+	a#go-top{
+		width: 6rem;
+		min-height: 4rem;
+	}
+
+	#go-top:hover {
+		color: lighten(@color, 15%);
+		border-bottom: 2px solid @color;
+		border-right: 2px solid @color;
+	}
+	.fa-arrow-circle-up:before {
+		content: "\f0aa";
+		font-size: 60px;
+
+	}
